@@ -8,5 +8,23 @@
     margin: auto;
     align-items: center;
     justify-content: center;
-    
+}
+
+
+
+.first-section-matter {
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+}
+
+.first-section-part {
+    padding: 30px;
+    background: lightgreen;
+    margin-left: 30px;
+    border-radius: 30%;
+}
+
+.first-section-part p{
+    font-size: 80px;
 }
