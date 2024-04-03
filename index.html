@@ -13,18 +13,18 @@
         <div class="main-body">
             <div class="first-section">
                 <div class="first-section-box">
-                    <div class="first-section-matter">
-                        <div class="first-section-part">
+                    <div class="first-section-matter" id="hour-minuts-seconds">
+                        <div class="first-section-part" id="hour">
                             <p>00</p>
                         </div>
-                        <div class="first-section-part">
+                        <div class="first-section-part" id="minuts">
                             <p>00</p>
                         </div>
-                        <div class="first-section-part">
+                        <div class="first-section-part" id="seconds">
                             <p>00</p>
                         </div>
-                        <div class="first-section-part">
-                            <p>00</p>
+                        <div class="first-section-part" id="session">
+                            <p>AM</p>
                         </div>
                     </div>
                 </div>
@@ -33,5 +33,40 @@
         <div class="footer"></div>
     </div>
     
+
+    <script>
+        setInterval(function () {
+            let session = "AM";
+            currnetTime = new Date();
+            //gethour
+            h = currnetTime.getHours();
+            //get am and pm 
+            if (h>12){
+                session = 'PM';
+            }
+
+            if(h>=12){
+                h-=12;
+                if(h<=9){
+                    h='0'+h;
+                }
+            }
+            //gte minutes
+            m = currnetTime.getMinutes();
+                if(m<=9){
+                    m='0'+m;
+                }
+                //get seconds
+            s = currnetTime.getSeconds();
+                if(s<=9){
+                    s='0'+s;
+                }
+
+            document.getElementById("hour").innerHTML = h;
+            document.getElementById("minuts").innerHTML = m;
+            document.getElementById("seconds").innerHTML = s;
+            document.getElementById("session").innerHTML = session;
+        },1000)
+    </script>
 </body>
 </html>
